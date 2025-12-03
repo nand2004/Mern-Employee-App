@@ -1,0 +1,285 @@
+/* ---------------- General Styles ---------------- */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+h1, h2, h3 {
+  color: #333;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* ---------------- Login Page ---------------- */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.login-box {
+  background: #fff;
+  padding: 30px 40px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  text-align: center;
+  width: 350px;
+}
+
+.login-box input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.login-box button {
+  width: 100%;
+  padding: 10px;
+  background-color: #2f80ed;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.login-box button:hover {
+  background-color: #1366d6;
+}
+
+.login-box .error {
+  color: red;
+  margin-top: 10px;
+}
+
+/* ---------------- Navbar ---------------- */
+.navbar {
+  background-color: #2f80ed;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #fff;
+}
+
+.navbar-brand a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.hamburger {
+  display: none;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  color: #fff;
+}
+
+.navbar-links {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+}
+
+.navbar-links li a,
+.logout-btn {
+  color: #fff;
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.navbar-links li a:hover,
+.logout-btn:hover {
+  background-color: #1366d6;
+}
+
+.logout-btn {
+  background-color: #eb5757;
+  border: none;
+}
+
+.logout-btn:hover {
+  background-color: #c0392b;
+}
+
+/* Dashboard / Employee Table */
+.dashboard-container,
+.employee-container {
+  padding: 20px;
+}
+
+.dashboard-table,
+.employee-table {
+  width: 95%;
+  border-collapse: collapse;
+  margin-top: 15px;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.dashboard-table th,
+.dashboard-table td,
+.employee-table th,
+.employee-table td {
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+.dashboard-table th,
+.employee-table th {
+  background-color: #2f80ed;
+  color: white;
+}
+
+.dashboard-table tr:nth-child(even),
+.employee-table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+button,
+.update-btn,
+.delete-btn,
+.add-btn {
+  padding: 6px 12px;
+  margin-right: 5px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  background-color: #2f80ed;
+  transition: 0.3s;
+}
+
+.update-btn {
+  background-color: #f2994a;
+}
+
+.delete-btn {
+  background-color: #eb5757;
+}
+
+.add-btn {
+  background-color: #27ae60;
+  text-decoration: none;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+button:hover,
+.update-btn:hover,
+.delete-btn:hover,
+.add-btn:hover {
+  opacity: 0.8;
+}
+
+/* for Employee Form */
+.employee-form {
+  background: #fff;
+  padding: 25px 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  width: 400px;
+  margin: 20px auto;
+}
+
+.employee-form input {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.employee-form button {
+  padding: 10px 15px;
+  margin-top: 10px;
+  background-color: #2f80ed;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 25px 30px;
+  border-radius: 10px;
+  width: 400px;
+  max-width: 90%;
+}
+
+
+
+@media (max-width: 768px) {
+  .hamburger { display: block; }
+
+  .navbar-links {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background-color: #2f80ed;
+    flex-direction: column;
+    width: 200px;
+    display: none;
+    padding: 10px;
+    border-radius: 0 0 0 10px;
+  }
+
+  .navbar-links.open { display: flex; }
+
+  .navbar-links li { margin: 10px 0; }
+
+  .dashboard-table,
+  .employee-table,
+  .employee-form,
+  .login-box {
+    width: 90%;
+  }
+
+  .dashboard-table th,
+  .dashboard-table td,
+  .employee-table th,
+  .employee-table td {
+    padding: 8px 10px;
+  }
+
+  button,
+  .update-btn,
+  .delete-btn,
+  .add-btn,
+  .employee-form button {
+    padding: 6px 10px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .dashboard-table,
+  .employee-table {
+    display: block;
+    overflow-x: auto;
+  }
+}
